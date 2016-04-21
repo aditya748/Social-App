@@ -1,0 +1,44 @@
+<<!DOCTYPE html>
+<html ng-app="Social">
+<head>
+	<title>Facebook</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="app/css/main.css">
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+
+<script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/sign/signupcontroller.js"></script>
+<script type="text/javascript" src="app/navigation/navigation.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="app/profile/profile-edit-controller.js"></script>
+<script type="text/javascript" src="app/follow/followController.js"></script>
+<script type="text/javascript" src="app/main/main-controller.js"></script>
+<script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+<script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload-all.js"></script>
+<script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+</head>
+<body >
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container" ng-controller="navigation">
+   <div class="row" ng-show="!loggedIn">
+   	   <input type="text" ng-model="login.email">
+   	   <input type="password" ng-model="login.password"><button ng-click="loginuse()">LogIn</button><a ui-sref="signup">Create Account</a>
+   </div>
+   <div ng-show="loggedIn">
+   	<a ui-sref="editprofile">Edit Profile</a>
+   	<a ui-sref="follow">follow Users</a>
+   	<a ng-click="logout()">logout</a>
+   </div>
+  </div>
+</nav>
+<div ui-view id="view"></div>
+</body>
+
+
+
+
+</html>

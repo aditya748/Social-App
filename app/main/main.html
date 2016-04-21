@@ -1,0 +1,14 @@
+<div class="col-sm-10 col-sm-offset-1">
+	<div class="row">
+		<textarea ng-model="tweet" ng-keypress="sendTweets($event)" class="form-control" placeholder="enter tweets"></textarea>
+	</div>
+	
+</div>
+<div class="row">
+		<table>
+			<tr ng-repeat="tweet in tweets">
+				<td>{{tweet.content}}</td>
+				<td>{{tweet.date | date:'mm/dd/yyyy'}}</td>
+			</tr>
+		</table>
+	</div>
